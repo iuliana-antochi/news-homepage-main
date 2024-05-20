@@ -197,6 +197,12 @@ aside h2 {
   justify-content: space-between;
 }
 
+.card img, .card-text {
+  height: 80%;
+  width: auto;
+}
+
+
 .card-text h3 {
   color: hsl(233, 8%, 79%);
 }
@@ -248,8 +254,11 @@ aside h2 {
 @media only screen and (max-width: 480px) {
   .wrapper {
     margin: 3% auto;
-    max-width: 90%;
     display: block;
+  }
+
+  .main-content-text p {
+    margin-bottom: 1.875rem;
   }
 
   nav,
