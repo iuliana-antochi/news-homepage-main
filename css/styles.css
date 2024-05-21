@@ -35,20 +35,6 @@ a {
   text-decoration: none;
 }
 
-nav a:hover,
-.card a:hover {
-  color: hsl(5, 85%, 63%);
-}
-
-a:link,
-a:visited {
-  color: inherit;
-}
-
-aside a:hover {
-  color: hsl(35, 77%, 62%);
-}
-
 /* Body */
 
 body {
@@ -68,15 +54,19 @@ body {
     "main main aside"
     "cards cards cards";
 }
+
 header {
   grid-area: header;
 }
+
 main {
   grid-area: main;
 }
+
 aside {
   grid-area: aside;
 }
+
 .cards {
   grid-area: cards;
 }
@@ -90,6 +80,7 @@ header {
 nav {
   display: flex;
   align-items: center;
+  color:hsl(236, 13%, 42%);
 }
 
 ul {
@@ -106,6 +97,16 @@ ul {
 ul:not(last-child),
 ul:not(first-child) {
   gap: 3rem;
+}
+
+nav a:hover,
+.card a:hover {
+  color: hsl(5, 85%, 63%);
+}
+
+a:link,
+a:visited {
+  color: inherit;
 }
 
 .hamburger {
@@ -150,6 +151,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color:hsl(236, 13%, 42%);
 }
 
 .main-content-text a {
@@ -167,6 +169,7 @@ main {
   background-color: hsl(240, 100%, 5%);
 }
 /* Aside */
+
 .aside-wrapper {
   background-color: hsl(240, 100%, 5%);
   color: hsl(36, 100%, 99%);
@@ -189,11 +192,12 @@ aside p:last-of-type {
   border-bottom: none;
 }
 
-aside h2 {
+aside h2, aside a:hover {
   color: hsl(35, 77%, 62%);
 }
 
 /* Cards */
+
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -234,10 +238,13 @@ aside h2 {
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin-bottom: 1rem;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
+/* Media queries */
 
 @media only screen and (max-width: 1024px) {
   .wrapper {
@@ -271,10 +278,6 @@ aside h2 {
     display: block;
   }
 
-  .main-content-text p {
-    margin-bottom: 1.875rem;
-  }
-
   nav,
   ul,
   main,
@@ -283,10 +286,23 @@ aside h2 {
     display: block;
     margin-bottom: 1.875rem;
   }
+
+  .main-content-text p,
+  .img-wrapper {
+    margin-bottom: 1.875rem;
+  }
+
+  .img-wrapper,
+  .main-content-title {
+    margin-bottom: 1.25rem;
+  }
+
+  main, aside {
+    margin-bottom: 3.75rem;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-
   header {
     align-items: center;
   }
