@@ -108,6 +108,20 @@ ul:not(first-child) {
   gap: 3rem;
 }
 
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
 /* Main */
 
 .hero-img {
@@ -197,11 +211,11 @@ aside h2 {
   justify-content: space-between;
 }
 
-.card img, .card-text {
+.card img,
+.card-text {
   height: 80%;
   width: auto;
 }
-
 
 .card-text h3 {
   color: hsl(233, 8%, 79%);
@@ -268,5 +282,51 @@ aside h2 {
   .cards {
     display: block;
     margin-bottom: 1.875rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  header {
+    align-items: center;
+  }
+
+  .nav-elements {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    flex-direction: column;
+    background-color: #fff;
+    width: 70%;
+    height: 100%;
+    margin-top: 2rem;
+    text-align: start;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-elements.active {
+    right: 0;
+    padding: 6rem 0rem 0rem 1rem;
+  }
+
+  .nav-item {
+    margin: 1rem 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 }
