@@ -111,16 +111,18 @@ a:visited {
 
 .hamburger {
   display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.bar {
+.hamburger .bar {
   display: block;
-  width: 40px;
+  width: 30px;
   height: 3px;
   margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
   background-color: #101010;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Main */
@@ -272,36 +274,6 @@ aside h2, aside a:hover {
   }
 }
 
-@media only screen and (max-width: 480px) {
-  .wrapper {
-    margin: 3% auto;
-    display: block;
-  }
-
-  nav,
-  ul,
-  main,
-  aside,
-  .cards {
-    display: block;
-    margin-bottom: 1.875rem;
-  }
-
-  .main-content-text p,
-  .img-wrapper {
-    margin-bottom: 1.875rem;
-  }
-
-  .img-wrapper,
-  .main-content-title {
-    margin-bottom: 1.25rem;
-  }
-
-  main, aside {
-    margin-bottom: 3.75rem;
-  }
-}
-
 @media only screen and (max-width: 768px) {
   header {
     align-items: center;
@@ -344,5 +316,36 @@ aside h2, aside a:hover {
 
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  .wrapper {
+    margin: 3% auto;
+    display: block;
+  }
+
+  nav,
+  ul,
+  main,
+  aside,
+  .cards {
+    display: block;
+    margin-bottom: 1.875rem;
+  }
+
+  .main-content-text p,
+  .img-wrapper {
+    margin-bottom: 1.875rem;
+  }
+
+  .img-wrapper,
+  .main-content-title {
+    margin-bottom: 1.25rem;
+  }
+
+  main, aside {
+    margin-bottom: 3.75rem;
   }
 }
