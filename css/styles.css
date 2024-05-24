@@ -42,21 +42,16 @@ body {
 }
 
 .wrapper {
-  margin: 3% auto;
-  max-width: 80%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto auto;
-  gap: 1.875rem;
-  grid-template-areas:
-    "header header header"
-    "main main aside"
-    "main main aside"
-    "cards cards cards";
+  margin: 3.125rem auto;
+  max-width: 75rem;
 }
 
-header {
-  grid-area: header;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1.875rem;
+  grid-template-areas: "main main aside";
 }
 
 main {
@@ -65,10 +60,6 @@ main {
 
 aside {
   grid-area: aside;
-}
-
-.cards {
-  grid-area: cards;
 }
 
 /* Header */
@@ -80,7 +71,7 @@ header {
 nav {
   display: flex;
   align-items: center;
-  color:hsl(236, 13%, 42%);
+  color: hsl(236, 13%, 42%);
 }
 
 ul {
@@ -153,7 +144,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color:hsl(236, 13%, 42%);
+  color: hsl(236, 13%, 42%);
 }
 
 .main-content-text a {
@@ -194,21 +185,26 @@ aside p:last-of-type {
   border-bottom: none;
 }
 
-aside h2, aside a:hover {
+aside h2,
+aside a:hover {
   color: hsl(35, 77%, 62%);
 }
 
 /* Cards */
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.card {
+  display: flex;
+  justify-content: space-between;
 }
 
-.card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.card img {
+  padding-right: 1.25rem;
+}
+
+.card img,
+.card-text {
+  height: 10rem;
+  margin-bottom: 1.25rem;
 }
 
 .card-text {
@@ -217,18 +213,8 @@ aside h2, aside a:hover {
   justify-content: space-between;
 }
 
-.card img,
-.card-text {
-  height: 80%;
-  width: auto;
-}
-
 .card-text h3 {
   color: hsl(233, 8%, 79%);
-}
-
-.card-text h5 {
-  margin: 1.25rem 0;
 }
 
 .card-text p {
@@ -248,33 +234,24 @@ aside h2, aside a:hover {
 
 /* Media queries */
 
-@media only screen and (max-width: 1024px) {
-  .wrapper {
-    max-width: 90%;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-      "header"
-      "main"
-      "aside"
-      "cards";
+      "main main"
+      "aside aside";
   }
 
   main {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "img-wrapper"
-      "main-content-title"
-      "main-content-text";
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
+  .wrapper {
+    margin: 3.125rem 0.625rem;
+  }
+
   header {
     align-items: center;
   }
@@ -317,20 +294,12 @@ aside h2, aside a:hover {
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
-}
 
-
-@media only screen and (max-width: 480px) {
-  .wrapper {
-    margin: 3% auto;
-    display: block;
-  }
-
+  .grid-container,
   nav,
   ul,
   main,
-  aside,
-  .cards {
+  aside {
     display: block;
     margin-bottom: 1.875rem;
   }
@@ -345,7 +314,8 @@ aside h2, aside a:hover {
     margin-bottom: 1.25rem;
   }
 
-  main, aside {
+  main,
+  aside {
     margin-bottom: 3.75rem;
   }
 }
