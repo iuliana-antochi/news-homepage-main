@@ -5,11 +5,6 @@
 
 /* Typography */
 
-html {
-  font-family: "Inter";
-  font-size: 1rem;
-}
-
 h1 {
   font-size: 4rem;
   line-height: normal;
@@ -39,10 +34,11 @@ a {
 
 body {
   background-color: #fefdf9;
+  font-family: "Inter";
 }
 
 .wrapper {
-  margin: 3.125rem auto;
+  margin: 3.125rem auto 5rem auto;
   max-width: 75rem;
 }
 
@@ -113,6 +109,9 @@ a:visited {
   height: 3px;
   margin: 5px auto;
   background-color: #101010;
+}
+
+.transition-all {
   transition: all 0.3s ease-in-out;
 }
 
@@ -226,7 +225,7 @@ aside a:hover {
 .attribution {
   font-size: 11px;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1cap;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
@@ -252,7 +251,32 @@ aside a:hover {
     margin: 3.125rem 0.625rem;
   }
 
-  header {
+ 
+  .grid-container,
+  nav,
+  ul,
+  main,
+  aside {
+    display: block;
+    margin-bottom: 1.875rem;
+  }
+
+  .main-content-text p,
+  .img-wrapper {
+    margin-bottom: 1.875rem;
+  }
+
+  .img-wrapper,
+  .main-content-title {
+    margin-bottom: 1.25rem;
+  }
+
+  main,
+  aside {
+    margin-bottom: 3.75rem;
+  }
+
+   header {
     align-items: center;
   }
 
@@ -260,14 +284,16 @@ aside a:hover {
     position: fixed;
     right: -100%;
     top: 0;
-    flex-direction: column;
     background-color: #fff;
     width: 70%;
     height: 100%;
     margin-top: 2rem;
     text-align: start;
-    transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .transition-nav {
+    transition: 0.3s;
   }
 
   .nav-elements.active {
@@ -295,27 +321,4 @@ aside a:hover {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  .grid-container,
-  nav,
-  ul,
-  main,
-  aside {
-    display: block;
-    margin-bottom: 1.875rem;
-  }
-
-  .main-content-text p,
-  .img-wrapper {
-    margin-bottom: 1.875rem;
-  }
-
-  .img-wrapper,
-  .main-content-title {
-    margin-bottom: 1.25rem;
-  }
-
-  main,
-  aside {
-    margin-bottom: 3.75rem;
-  }
 }
